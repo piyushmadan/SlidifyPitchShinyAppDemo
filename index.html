@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shiny app to find cost of medical procedure in your area (in US)</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Shiny app to find cost of medical procedure in your area (in US)">
+  <meta name="author" content="Piyush Madan">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Shiny app to find cost of medical procedure in your area (in US)</h1>
+    <h2></h2>
+    <p>Piyush Madan<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Intro</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This shiny app will help you to find cost of different procedures in your state. You can compare and select one that is fitting your needs</p>
+
+<p>In this app, I&#39;m filtering on Procedure name &amp; State from a large dataset from Data.CMS.gov . User can filter results from filters on result table</p>
+
+<p>Data Source: 
+<a href="https://data.cms.gov/Medicare/Inpatient-Prospective-Payment-System-IPPS-Provider/97k6-zzx3">https://data.cms.gov/Medicare/Inpatient-Prospective-Payment-System-IPPS-Provider/97k6-zzx3</a></p>
+
+<p>Github: 
+<a href="https://github.com/piyushmadan/ShinyAppDemo">https://github.com/piyushmadan/ShinyAppDemo</a></p>
+
+<p>Shiny App: 
+<a href="https://piyushmadan.shinyapps.io/ShinyDemoApp">https://piyushmadan.shinyapps.io/ShinyDemoApp</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Information about Data</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Source: Data.CMS.gov</p>
+
+<pre><code class="r">  data &lt;- read.csv(&quot;Inpatient_Prospective_Payment_System__IPPS__Provider_Summary_for_the_Top_100_Diagnosis-Related_Groups__DRG__-_FY2011.csv&quot;)
+  names(data)
+</code></pre>
+
+<pre><code>##  [1] &quot;DRG.Definition&quot;                      
+##  [2] &quot;Provider.Id&quot;                         
+##  [3] &quot;Provider.Name&quot;                       
+##  [4] &quot;Provider.Street.Address&quot;             
+##  [5] &quot;Provider.City&quot;                       
+##  [6] &quot;Provider.State&quot;                      
+##  [7] &quot;Provider.Zip.Code&quot;                   
+##  [8] &quot;Hospital.Referral.Region.Description&quot;
+##  [9] &quot;Total.Discharges&quot;                    
+## [10] &quot;Average.Covered.Charges&quot;             
+## [11] &quot;Average.Total.Payments&quot;              
+## [12] &quot;Average.Medicare.Payments&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Get Started</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Select (multiple) states and procedure. Wait for record to be updated. Use search/filter in options to figure out best place to go for that procedure</p>
+
+<p>You can acess Shiny App here:
+<a href="https://piyushmadan.shinyapps.io/ShinyDemoApp/">https://piyushmadan.shinyapps.io/ShinyDemoApp/</a>
+OR check next page </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Demo (iframe)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Wait for app to be downloaded (If iframe doesn&#39;t not load/ fit properly on your screen, visit <a href="https://piyushmadan.shinyapps.io/ShinyDemoApp/" title="ShinyApp">Shiny App</a></p>
+
+<iframe src="https://piyushmadan.shinyapps.io/ShinyDemoApp/" style=></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Files in project</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Link to Github: <a href="https://github.com/piyushmadan/ShinyAppDemo">https://github.com/piyushmadan/ShinyAppDemo</a></p>
+
+<ul>
+<li><a href="https://github.com/piyushmadan/ShinyAppDemo/blob/master/ui.R">ui.R</a></li>
+<li><a href="https://github.com/piyushmadan/ShinyAppDemo/blob/master/server.R">server.R</a></li>
+<li><a href="https://github.com/piyushmadan/ShinyAppDemo/blob/master/ReadMe.md">ReadMe.md</a></li>
+<li><a href="https://github.com/piyushmadan/ShinyAppDemo/blob/master/Inpatient_Prospective_Payment_System__IPPS__Provider_Summary_for_the_Top_100_Diagnosis-Related_Groups__DRG__-_FY2011.csv">DataFile</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <article data-timings="">
+    <p>References:</p>
+
+<ul>
+<li><a href="http://shiny.rstudio.com/tutorial/">http://shiny.rstudio.com/tutorial/</a></li>
+<li><a href="http://shiny.rstudio.com/reference/shiny/latest/">http://shiny.rstudio.com/reference/shiny/latest/</a></li>
+<li>Inpatient Prospective Payment System (IPPS) Provider Summary for the Top 100 Diagnosis-Related Groups (DRG) from <a href="https://data.cms.gov/">https://data.cms.gov/</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Intro'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Information about Data'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Get Started'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Demo (iframe)'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Files in project'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title=''>
+         6
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
